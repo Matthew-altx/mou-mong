@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An English guide to Wumang Fortune: explore 296 fortune-stick texts from three Hong Kong temple collections, with source notes and a free lookup tool.">
+  <meta name="theme-color" content="#143C2D">
+  <title>Wumang Fortune — A guide to Hong Kong fortune sticks</title>
+  <style>
+    :root { color-scheme: light; --green: #143C2D; --orange: #DA8134; --ink: #20392E; --muted: #4C6356; --line: #D8E3DB; --paper: #F5F8F5; }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 1rem; }
+    body { margin: 0; background: #FFFFFF; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "PingFang HK", "Microsoft JhengHei", sans-serif; font-size: 18px; line-height: 1.7; overflow-wrap: anywhere; }
+    a { color: var(--green); text-underline-offset: .2em; text-decoration-thickness: .08em; }
+    a:hover { text-decoration-thickness: .14em; }
+    a:focus-visible { outline: 3px solid var(--orange); outline-offset: 5px; border-radius: 3px; }
+    .wrap { width: min(100% - 2.5rem, 1120px); margin-inline: auto; }
+    .skip { position: absolute; top: .5rem; left: 1rem; z-index: 2; padding: .7rem 1rem; background: white; transform: translateY(-200%); }
+    .skip:focus { transform: translateY(0); }
+    header { border-bottom: 1px solid var(--line); }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .25rem 1.5rem; padding-block: .55rem; }
+    .brand { display: inline-flex; align-items: center; min-height: 48px; font-size: 20px; font-weight: 750; text-decoration: none; letter-spacing: -.025em; }
+    .brand-mark { width: 12px; height: 27px; border-radius: 6px; background: var(--orange); margin-right: .65rem; flex-shrink: 0; }
+    nav ul { display: flex; flex-wrap: wrap; gap: .1rem 1.15rem; list-style: none; margin: 0; padding: 0; }
+    nav a { display: inline-flex; align-items: center; min-height: 48px; font-size: 17px; font-weight: 600; text-decoration: none; }
+    .hero { padding-block: clamp(3.5rem, 8vw, 6.5rem); background: linear-gradient(140deg, #F5F8F5 50%, #FFF5E8); }
+    .eyebrow { margin: 0 0 1rem; color: var(--muted); font-size: 17px; font-weight: 650; }
+    h1, h2, h3 { color: var(--green); line-height: 1.18; letter-spacing: -.035em; text-wrap: balance; }
+    h1 { max-width: 850px; margin: 0; font-size: clamp(2.5rem, 5.6vw, 4.5rem); }
+    h2 { margin: 0 0 1.1rem; font-size: clamp(2rem, 3.5vw, 2.8rem); }
+    h3 { margin: .5rem 0 1rem; font-size: 1.5rem; }
+    p { margin: 0 0 1rem; }
+    .lead { max-width: 760px; margin-top: 1.5rem; font-size: clamp(1.15rem, 2vw, 1.4rem); }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1.25rem; margin-top: 1.7rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; max-width: 100%; padding: .7rem 1.25rem; border: 1px solid var(--green); border-radius: 999px; background: var(--green); color: #FFFFFF; font-weight: 650; text-align: center; text-decoration: none; }
+    .button:hover { background: #24533F; text-decoration: none; }
+    .secondary { display: inline-flex; align-items: center; min-height: 48px; }
+    .language-note { max-width: 760px; margin-top: 1.5rem; color: var(--muted); }
+    .section { padding-block: clamp(3rem, 6vw, 5rem); }
+    .intro { max-width: 760px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+    .card { min-width: 0; padding: 1.8rem; background: var(--paper); border: 1px solid var(--line); border-radius: 24px; }
+    .card p:last-child { margin-bottom: 0; }
+    .count { display: inline-block; padding: .2rem .7rem; border-radius: 999px; background: #FFE9D4; color: var(--green); font-size: 17px; font-weight: 650; }
+    .card-link { display: inline-flex; align-items: center; min-height: 48px; margin-top: .3rem; font-weight: 650; }
+    .source { padding-top: 1rem; border-top: 1px solid var(--line); margin-top: 1rem; color: var(--muted); }
+    .steps { list-style: none; counter-reset: steps; margin: 2rem 0 0; padding: 0; }
+    .steps li { counter-increment: steps; display: grid; grid-template-columns: 2.8rem minmax(0, 1fr); gap: 1rem; padding-block: 1.3rem; border-top: 1px solid var(--line); }
+    .steps li::before { content: counter(steps); display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--green); color: white; font-weight: 700; }
+    .steps h3 { margin: .1rem 0 .5rem; font-size: 1.35rem; }
+    .reading { background: var(--paper); }
+    .reading .wrap { display: grid; grid-template-columns: 1fr 1.35fr; gap: 2.5rem; }
+    .reading-copy { min-width: 0; }
+    .reading-copy p + p { margin-top: 1.2rem; }
+    .resources { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; list-style: none; margin: 1.8rem 0 0; padding: 0; }
+    .resources li { padding: 1.3rem 0; border-top: 1px solid var(--line); }
+    .resources a { display: inline-flex; align-items: center; min-height: 48px; font-size: 1.15rem; font-weight: 650; }
+    .resources p { color: var(--muted); margin: .15rem 0 0; }
+    footer { padding-block: 2rem; border-top: 1px solid var(--line); color: var(--muted); }
+    footer p { max-width: 850px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+    .footer-links a { display: inline-flex; align-items: center; min-height: 48px; }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .reading .wrap { grid-template-columns: 1fr; gap: 1.25rem; } .resources { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) { .wrap { width: calc(100% - 2rem); } .nav { gap: 0; } nav { width: 100%; } nav ul { justify-content: space-between; gap: .1rem .5rem; } nav a { font-size: 16px; } .card { padding: 1.4rem; } .actions { align-items: stretch; flex-direction: column; gap: .5rem; } .secondary { justify-content: center; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="https://drawlot-helper.alightlefton.com/" aria-label="Wumang Fortune — main website"><span class="brand-mark" aria-hidden="true"></span>Wumang Fortune</a>
+      <nav aria-label="Guide navigation"><ul>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#how-to">How to use</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ul></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="guide-title">
+      <div class="wrap">
+        <p class="eyebrow">An independent cultural project from Hong Kong</p>
+        <h1 id="guide-title">A guide to Hong Kong fortune sticks.</h1>
+        <p class="lead">Explore 296 traditional fortune-stick texts from three temple collections. Look up a stick number, check its source, and take a moment to reflect.</p>
+        <div class="actions">
+          <a class="button" href="https://drawlot-helper.alightlefton.com/draw/?lang=en">Open the free tool in English</a>
+          <a class="secondary" href="https://drawlot-helper.alightlefton.com/" lang="zh-Hant-HK">繁體中文網站 →</a>
+        </div>
+        <p class="language-note">The tool has an English interface. Traditional texts, cultural articles and source documentation are mainly in Traditional Chinese.</p>
+      </div>
+    </section>
+    <section class="section" id="collections" aria-labelledby="collections-title">
+      <div class="wrap">
+        <div class="intro">
+          <p class="eyebrow">Three collections</p>
+          <h2 id="collections-title">Choose a temple to begin.</h2>
+          <p>Wumang Fortune was created by Matthew Ng in Hong Kong. It brings together texts associated with Man Mo Temple, Wong Tai Sin and Che Kung, with notes on where they come from.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <span class="count">100 sticks</span><h3>Man Mo Temple / Guan Di</h3>
+            <p>Browse the collection or look up the number of a stick you already have.</p>
+            <a class="card-link" href="https://drawlot-helper.alightlefton.com/man-mo-temple/?lang=en">Open Man Mo collection →</a>
+            <p class="source">Based on public transcriptions. Stick 74 also has a published photograph for comparison. The full collection has not been checked against physical temple slips.</p>
+          </article>
+          <article class="card">
+            <span class="count">100 sticks</span><h3>Wong Tai Sin</h3>
+            <p>Read a result and follow its source link to compare the traditional text.</p>
+            <a class="card-link" href="https://drawlot-helper.alightlefton.com/wong-tai-sin/?lang=en">Open Wong Tai Sin collection →</a>
+            <p class="source">Includes links to the corresponding source texts on Sik Sik Yuen’s TAO-NET.</p>
+          </article>
+          <article class="card">
+            <span class="count">96 sticks</span><h3>Che Kung</h3>
+            <p>Explore the collection and read the source notes alongside each result.</p>
+            <a class="card-link" href="https://drawlot-helper.alightlefton.com/che-kung/?lang=en">Open Che Kung collection →</a>
+            <p class="source">Sticks 55, 68 and 88 reference Chinese Temples Committee material. Most other entries rely on non-official public transcriptions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="how-to" aria-labelledby="how-title">
+      <div class="wrap intro">
+        <p class="eyebrow">Getting started</p>
+        <h2 id="how-title">From a question to a small next step.</h2>
+        <p>Core drawing and number lookup are free. You do not need to enter your name, birthday or private question.</p>
+        <ol class="steps">
+          <li><div><h3>Choose your starting point</h3><p>Already have a stick? Select its temple and enter its number. If you are exploring, draw a stick online or read the <a href="https://drawlot-helper.alightlefton.com/guide/">first-time guide in Traditional Chinese</a>.</p></div></li>
+          <li><div><h3>Read the text and its source</h3><p>Start with the traditional text. Check its source note before reading the contemporary interpretation, which is presented separately.</p></div></li>
+          <li><div><h3>Reflect, then choose an action</h3><p>Write down what the reading brings to mind and what you still need to find out. Choose one small action you can review later.</p></div></li>
+        </ol>
+        <p>The interface is available in Traditional Chinese, Simplified Chinese, English, Thai, Korean and Japanese.</p>
+      </div>
+    </section>
+    <section class="section reading" aria-labelledby="reading-title">
+      <div class="wrap">
+        <div><p class="eyebrow">Reading with context</p><h2 id="reading-title">A prompt for reflection.</h2></div>
+        <div class="reading-copy">
+          <p>Contemporary interpretations are AI-assisted. They have not been reviewed by the temples or independent experts.</p>
+          <p>A fortune stick does not establish facts about another person or guarantee a future outcome. This material is cultural reference; it does not replace medical, legal or financial advice.</p>
+          <p>Wumang Fortune is not an official service of any temple. Drawing online should not be treated as the same experience as visiting a temple.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="sources" aria-labelledby="sources-title">
+      <div class="wrap">
+        <p class="eyebrow">Continue reading</p><h2 id="sources-title">Follow the sources.</h2>
+        <p class="intro">These pages on the main website are mainly in Traditional Chinese.</p>
+        <ul class="resources">
+          <li><a href="https://drawlot-helper.alightlefton.com/sources/">Sources and collation notes →</a><p>Where the texts come from, and what has or has not been checked.</p></li>
+          <li><a href="https://drawlot-helper.alightlefton.com/fortune-sticks/">Fortune-stick reading catalogue →</a><p>Browse the available standalone reading pages.</p></li>
+          <li><a href="https://drawlot-helper.alightlefton.com/blog/how-to-ask-a-fortune-stick-question/">Framing a fortune-stick question →</a><p>Examples of keeping a question focused.</p></li>
+          <li><a href="https://drawlot-helper.alightlefton.com/blog/">Hong Kong temple articles →</a><p>Read more about the cultural background.</p></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p><strong>Wumang Fortune · <span lang="zh-Hant-HK">無茫之籤</span></strong><br>This guide is public project documentation. The website’s application code has not been released as open source.</p>
+      <div class="footer-links">
+        <a href="https://drawlot-helper.alightlefton.com/vow/">Free-access commitment</a>
+        <a href="https://drawlot-helper.alightlefton.com/privacy">Privacy policy</a>
+        <a href="https://drawlot-helper.alightlefton.com/updates/">Website updates</a>
+        <a href="https://github.com/Matthew-altx/wumang-fortune">Public project repository</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
