@@ -1,8 +1,8 @@
-# Wumang Fortune: Hong Kong temple fortune-stick guide
+# Mou-mong: Hong Kong temple fortune-stick guide
 
 [Open the free tool in English](https://drawlot-helper.alightlefton.com/draw/?lang=en) · [繁體中文網站](https://drawlot-helper.alightlefton.com/) · [Reading catalogue](https://drawlot-helper.alightlefton.com/fortune-sticks/)
 
-Wumang Fortune is an independent cultural project created by Matthew Ng in Hong Kong. It helps readers look up traditional fortune-stick texts associated with Man Mo Temple, Wong Tai Sin and Che Kung, and use them as a starting point for reflection.
+Mou-mong is an independent cultural project created by Matthew Ng in Hong Kong. It helps readers look up traditional fortune-stick texts associated with Man Mo Temple, Wong Tai Sin and Che Kung, and use them as a starting point for reflection.
 
 ## What you can do
 
